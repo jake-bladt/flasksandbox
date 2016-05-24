@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 apt-get update
-apt-get install git
+apt-get -y install git
 
 # install python tools
-apt-get install python3-setuptools
+apt-get -y install python3-setuptools
+
+#install pip
 easy_install3 pip
 pip3.4 install pylint
 pip3.4 install pyflakes
