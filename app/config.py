@@ -1,4 +1,3 @@
 class Configuration(object):
+  HOST = '0.0.0.0'
   DEBUG = True
-  host = '0.0.0.0'
-  
