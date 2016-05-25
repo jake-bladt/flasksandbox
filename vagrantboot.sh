@@ -2,6 +2,7 @@
 
 apt-get update
 apt-get -y install git
+apt-get -y install sqlite
 
 # install python tools
 apt-get -y install python3-setuptools
