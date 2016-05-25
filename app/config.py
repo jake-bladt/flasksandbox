@@ -1,3 +1,2 @@
 class Configuration(object):
-  DEBUG = true
-  
+  DEBUG = True
