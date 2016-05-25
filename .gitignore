@@ -1,2 +1,4 @@
 .vagrant/machines/
+app/__pycache__/
+
 *.db
