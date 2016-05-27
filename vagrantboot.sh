@@ -6,6 +6,7 @@ apt-get -y install sqlite
 
 # install python tools
 apt-get -y install python3-setuptools
+apt-get -y install build-essential python3-dev
 
 #install pip
 easy_install3 pip
@@ -20,5 +21,5 @@ pip3.4 install flask-restless
 # development packages
 pip3.4 install pylint
 pip3.4 install pyflakes
-pip3.4 install ipython
+pip3.4 install jupyter
 
