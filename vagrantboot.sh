@@ -9,10 +9,16 @@ apt-get -y install python3-setuptools
 
 #install pip
 easy_install3 pip
-pip3.4 install pylint
-pip3.4 install pyflakes
+
+# production packages
 pip3.4 install flask
 pip3.4 install flask-wtf
 pip3.4 install flask-sqlalchemy
 pip3.4 install flask-login
 pip3.4 install flask-restless
+
+# development packages
+pip3.4 install pylint
+pip3.4 install pyflakes
+pip3.4 install ipython
+
