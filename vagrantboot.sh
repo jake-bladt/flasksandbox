@@ -15,6 +15,7 @@ easy_install3 pip
 pip3.4 install flask
 pip3.4 install flask-wtf
 pip3.4 install flask-sqlalchemy
+pip3.4 install flask-migrate
 pip3.4 install flask-login
 pip3.4 install flask-restless
 
