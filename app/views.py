@@ -1,9 +1,8 @@
-from flask import Blueprint
 from flask import render_template
-from helpers import object_list
 from models import DailyReading
 
 from app import app
+from helpers import object_list
 
 @app.route('/')
 def homepage():

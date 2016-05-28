@@ -6,5 +6,11 @@
   <body>
     <h1>Walker</h1>
     <h2>The first million steps are always the hardest.</h2>
+    <h3>Step Counts</h3>
+    <ul>
+      {% for entry in object_list.items %}
+        <li>{{entry.reading_day}}: {{entry.steps_count|int}}</li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
