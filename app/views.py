@@ -1,5 +1,7 @@
+from flask import render_template
+
 from app import app
 
 @app.route('/')
 def homepage():
-  return '<h1>Walker</h1>'
+  return render_template('homepage.html')
