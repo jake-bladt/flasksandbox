@@ -9,3 +9,7 @@ from helpers import object_list
 def homepage():
   readings = DailyReading.query.order_by(DailyReading.reading_day.desc())
   return object_list('homepage.html', readings, steps_form = StepsDataForm())
+
+@app.route('/stepsreading')
+def steps_reading():
+  pass
