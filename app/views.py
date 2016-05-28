@@ -11,5 +11,5 @@ def homepage():
   return object_list('homepage.html', readings, steps_form = StepsDataForm())
 
 @app.route('/stepsreading')
-def steps_reading():
+def stepsreading():
   pass
