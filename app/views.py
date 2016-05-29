@@ -18,10 +18,10 @@ def stepsreading():
     new_reading = form.populate_reading(DailyReading())
     existing_reading = DailyReading.query.filter(DailyReading.reading_day == new_reading.reading_day).first()
     if existing_reading:
-      print("Updating reading for " + existing_reading.reading_day)
+      print("Updating reading for " + existing_reading.reading_day.strftime('%B %d, %Y'))
       existing_reading.steps_count = new_reading.steps_count
     else:
-      print("Creating new reading for " + new_reading.reading_day)
+      print("Creating new reading for " + new_reading.reading_day.strftime('%B %d, %Y'))
       db.session.add(new_reading)
     db.session.commit()
   else:
