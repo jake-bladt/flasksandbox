@@ -15,7 +15,7 @@
     <h3>Step Counts</h3>
     <ul>
       {% for entry in object_list.items %}
-        <li>{{entry.reading_day.strftime('%B %d, %Y')}}: {{':,'.format(entry.steps_count)}}</li>
+        <li>{{entry.reading_day.strftime('%B %d, %Y')}}: {{'{:,}'.format(entry.steps_count)}}</li>
       {% endfor %}
     </ul>
   </body>
