@@ -6,5 +6,5 @@ class StepsDataForm(Form):
   steps_count = IntegerField("Steps", [validators.Required()])
 
   def populate_reading(self, reading):
-    self.populate_object(reading)
+    self.populate_obj(reading)
     return reading
