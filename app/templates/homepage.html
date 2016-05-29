@@ -7,6 +7,7 @@
     <h1>Walker</h1>
     <h2>The first million steps are always the hardest.</h2>
     <form action = '{{ url_for('stepsreading') }}' method='post'>
+      {{ steps_form.csrf_token }}
       {{ steps_form.reading_date.label }} : {{ steps_form.reading_date }}
       {{ steps_form.steps_count.label }} : {{ steps_form.steps_count }}
       <button type='submit'>Register</button>
