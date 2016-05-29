@@ -18,7 +18,7 @@ def stepsreading():
     existing_reading = session.query.filter(DailyReading.reading_day == new_reading.reading_day).first()
     if existing_reading:
       existing_reading.steps_count = new_reading.steps_count
-    else
+    else:
       db.session.add(new_reading)
     db.session.commit()
 
