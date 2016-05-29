@@ -10,7 +10,7 @@ class User(db.Model):
   created_timestamp = db.Column(db.DateTime, default=datetime.datetime.now)
   modified_timestamp = db.Column(db.DateTime, default=datetime.datetime.now, onupdate=datetime.datetime.now)
 
-  # Flask-Login interface..
+  # Flask-Login interface
   def get_id(self):
     return unicode(self.id)
 
