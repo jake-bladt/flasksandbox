@@ -1,4 +1,5 @@
 from flask import Flask, g
+from flask.ext.bcrypt import Bcrypt
 from flask.ext.login import LoginManager, current_user
 from flask.ext.migrate import Migrate, MigrateCommand
 from flask.ext.script import Manager
@@ -14,6 +15,7 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
+bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
