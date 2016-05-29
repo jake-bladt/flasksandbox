@@ -13,19 +13,13 @@ def homepage():
 @app.route('/stepsreading', methods=['POST'])
 def stepsreading():
   form = StepsDataForm(request.form)
-  print(form.reading_day)
   if form.validate():
     new_reading = form.populate_reading(DailyReading())
     existing_reading = DailyReading.query.filter(DailyReading.reading_day == new_reading.reading_day).first()
     if existing_reading:
-      print("Updating reading for " + existing_reading.reading_day.strftime('%B %d, %Y'))
       existing_reading.steps_count = new_reading.steps_count
     else:
-      print("Creating new reading for " + new_reading.reading_day.strftime('%B %d, %Y'))
       db.session.add(new_reading)
     db.session.commit()
-  else:
-    print("form failed to validate.")
-    print(form.errors)
 
   return redirect(url_for('homepage'))
