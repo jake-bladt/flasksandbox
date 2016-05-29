@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, redirect, url_for
 
 from app import app
 from models import DailyReading
@@ -10,6 +10,9 @@ def homepage():
   readings = DailyReading.query.order_by(DailyReading.reading_day.desc())
   return object_list('homepage.html', readings, steps_form = StepsDataForm())
 
-@app.route('/stepsreading')
+@app.route('/stepsreading', methods=['POST'])
 def stepsreading():
-  pass
+  form = StepsDataForm(request.form)
+  if form.validate():
+    new_reading = form.populate_reading(DailyReading())
+

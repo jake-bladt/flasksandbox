@@ -8,3 +8,4 @@ class StepsDataForm(Form):
 
   def populate_reading(self, reading):
     self.populate_object(reading)
+    return reading
