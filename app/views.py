@@ -23,5 +23,7 @@ def stepsreading():
       print("Creating new reading for " + new_reading.reading_day)
       db.session.add(new_reading)
     db.session.commit()
+  else:
+    print("form failed to validate.")
 
   return redirect(url_for('homepage'))
