@@ -1,4 +1,4 @@
-from flask import redirect, render_template, request, session, url_for
+from flask import redirect, render_template, request, url_for
 
 from app import app, db
 from models import DailyReading
@@ -16,7 +16,7 @@ def stepsreading():
   print(form.reading_day)
   if form.validate():
     new_reading = form.populate_reading(DailyReading())
-    existing_reading = session.query.filter(DailyReading.reading_day == new_reading.reading_day).first()
+    existing_reading = db.session.query.filter(DailyReading.reading_day == new_reading.reading_day).first()
     if existing_reading:
       print("Updating reading for " + existing_reading.reading_day)
       existing_reading.steps_count = new_reading.steps_count
