@@ -1,6 +1,10 @@
 import datetime
 from app import db
 
+class User(db.Model):
+  id = db.Column(db.Integer,  primary_key=True)
+  email = db.Column(db.String(128), unique=True)
+
 class DailyReading(db.Model):
   id = db.Column(db.Integer,  primary_key=True)
   steps_count = db.Column(db.Integer)
