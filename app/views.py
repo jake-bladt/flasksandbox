@@ -25,5 +25,6 @@ def stepsreading():
     db.session.commit()
   else:
     print("form failed to validate.")
+    print(form.errors)
 
   return redirect(url_for('homepage'))
