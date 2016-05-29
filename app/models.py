@@ -10,6 +10,19 @@ class User(db.Model):
   created_timestamp = db.Column(db.DateTime, default=datetime.datetime.now)
   modified_timestamp = db.Column(db.DateTime, default=datetime.datetime.now, onupdate=datetime.datetime.now)
 
+  # Flask-Login interface..
+  def get_id(self):
+    return unicode(self.id)
+
+  def is_authenticated(self):
+    return True
+
+  def is_active(self):
+    return self.active
+
+  def is_anonymous(self):
+    return False
+
 class DailyReading(db.Model):
   id = db.Column(db.Integer,  primary_key=True)
   steps_count = db.Column(db.Integer)
