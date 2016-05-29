@@ -13,6 +13,7 @@ def homepage():
 @app.route('/stepsreading', methods=['POST'])
 def stepsreading():
   form = StepsDataForm(request.form)
+  print(form)
   if form.validate():
     new_reading = form.populate_reading(DailyReading())
     existing_reading = session.query.filter(DailyReading.reading_day == new_reading.reading_day).first()
