@@ -1,5 +1,5 @@
 import datetime
-from app import db
+from app import bcrypt, db
 
 class User(db.Model):
   id = db.Column(db.Integer,  primary_key=True)
@@ -22,6 +22,28 @@ class User(db.Model):
 
   def is_anonymous(self):
     return False
+
+  @staticmethod
+  def make_password(plaintext):
+    return bcrypt.generate_password_hash(plaintext)
+
+  def check_password(self, raw_password):
+    return bcrypt.check_password_hash(self.password_hash, raw_password)
+
+  @classmethod
+  def create(cls, email, password, **kwargs):
+    return User(
+      email=email,
+      password_hash=User.make_password(password), **kwargs)
+
+  @staticmethod
+  def authenticate(email, password):
+    user = User.query.filter(User.email == email).first()
+    if user and user.check_password(password):
+      return user
+    return False
+
+
 
 class DailyReading(db.Model):
   id = db.Column(db.Integer,  primary_key=True)
