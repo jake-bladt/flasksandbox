@@ -16,5 +16,10 @@ def stepsreading():
   if form.validate():
     new_reading = form.populate_reading(DailyReading())
     existing_reading = session.query.filter(DailyReading.reading_day == new_reading.reading_day).first()
-  else
-    pass
+    if existing_reading:
+      existing_reading.steps_count = new_reading.steps_count
+    else
+      db.session.add(new_reading)
+    db.session.commit()
+
+  return redirect(url_for('homepage'))
