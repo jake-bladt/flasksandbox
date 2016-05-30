@@ -1,5 +1,5 @@
 from flask_wtf import Form
-from wtforms import DateField, IntegerField, validators
+from wtforms import BooleanField, DateField, IntegerField, validators
 from models import User
 
 class StepsDataForm(Form):
@@ -11,9 +11,9 @@ class StepsDataForm(Form):
     return reading
 
 class LoginForm(Form):
-  email = wtforms.StringField("Email", validators=[validators.Required()])
-  password = wtforms.PasswordField("Password", validators=[validators.Required()])
-  remember_me = wtforms.BooleanField("Remember me?", default=True)
+  email = StringField("Email", validators=[validators.Required()])
+  password = PasswordField("Password", validators=[validators.Required()])
+  remember_me = BooleanField("Remember me?", default=True)
 
   def validate(self):
     if not super(LoginForm, self).validate():
