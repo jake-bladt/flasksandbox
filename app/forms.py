@@ -1,5 +1,5 @@
 from flask_wtf import Form
-from wtforms import BooleanField, DateField, IntegerField, StringField, validators
+from wtforms import BooleanField, DateField, IntegerField, PasswordField, StringField, validators
 from models import User
 
 class StepsDataForm(Form):
