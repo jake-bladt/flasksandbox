@@ -11,4 +11,6 @@ class StepsDataForm(Form):
     return reading
 
 class LoginForm(Form):
-
+  email = wtforms.StringField("Email", validators=[validators.Required()])
+  password = wtforms.PasswordField("Password", validators=[validators.Required()])
+  remember_me = wtforms.BooleanField("Remember me?", default=True)
