@@ -2,7 +2,7 @@ from flask import redirect, render_template, request, url_for
 
 from app import app, db
 from models import DailyReading
-from forms import StepsDataForm
+from forms import StepsDataForm, LoginForm
 from helpers import object_list
 
 @app.route('/')
