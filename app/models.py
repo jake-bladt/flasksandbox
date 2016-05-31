@@ -10,6 +10,8 @@ class User(db.Model):
   created_timestamp = db.Column(db.DateTime, default=datetime.datetime.now)
   modified_timestamp = db.Column(db.DateTime, default=datetime.datetime.now, onupdate=datetime.datetime.now)
 
+  reading = db.realationship('DailyReading', backref='daily_reading', lazy='dynamic')
+
   # Flask-Login interface
   def get_id(self):
     return str(self.id)
