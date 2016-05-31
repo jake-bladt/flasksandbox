@@ -17,6 +17,7 @@ manager.add_command('db', MigrateCommand)
 
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
+login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 @app.before_request
