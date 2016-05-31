@@ -8,7 +8,7 @@ from helpers import object_list
 
 @app.route('/')
 def homepage():
-  readings = DailyReading.query.order_by(DailyReading.reading_day.desc())
+  readings = DailyReading.query.filter(DailyReading.user_id = g.user.id).order_by(DailyReading.reading_day.desc())
   return object_list('homepage.html', readings, steps_form = StepsDataForm())
 
 @app.route('/stepsreading', methods=['POST'])

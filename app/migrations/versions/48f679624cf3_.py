@@ -15,7 +15,7 @@ import sqlalchemy as sa
 
 
 def upgrade():
-    op.batch_alter_table('daily_reading'):
+    with op.batch_alter_table('daily_reading'):
         op.add_column('daily_reading', sa.Column('user_id', sa.Integer(), nullable=True))
         op.create_foreign_key(None, 'daily_reading', 'user', ['user_id'], ['id'])
         op.drop_column('user', 'is_active')
