@@ -44,8 +44,8 @@ class User(db.Model):
     return False
 
 @login_manager.user_loader
-def load_user(user_id):
-  return User.get(user_id)
+def _load_user(user_id):
+  return User.query.get(int(user_id))
 
 class DailyReading(db.Model):
   id = db.Column(db.Integer,  primary_key=True)
