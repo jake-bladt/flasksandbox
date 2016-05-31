@@ -6,6 +6,7 @@ from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
 
 from config import Configuration
+from models import User
 
 app = Flask(__name__)
 app.config.from_object(Configuration)
@@ -23,3 +24,7 @@ login_manager.login_view = 'login'
 @app.before_request
 def _before_request():
   g.user = current_user
+
+@login_manager.user_loader
+def load_user(user_id):
+  return User.get(user_id)
