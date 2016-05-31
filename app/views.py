@@ -1,4 +1,5 @@
 from flask import redirect, render_template, request, url_for
+from flask.ext.login import login_user
 
 from app import app, db
 from models import DailyReading
