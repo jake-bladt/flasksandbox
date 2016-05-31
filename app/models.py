@@ -1,5 +1,5 @@
 import datetime
-from app import bcrypt, db
+from app import bcrypt, db, login_manager
 
 class User(db.Model):
   id = db.Column(db.Integer,  primary_key=True)
