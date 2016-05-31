@@ -5,7 +5,7 @@
     <title>Walker</title>
   </head>
   <body>
-    <div class='userLoginName'>{{ g.user.user_name | "anonymous" }}
+    <div class='userLoginName'>{{ g.user.user_name }}
     <h1>Walker</h1>
     <h2>The first million steps are always the hardest.</h2>
     <form action = '{{ url_for('stepsreading') }}' method='post'>
